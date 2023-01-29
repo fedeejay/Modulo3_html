@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Territórios</title>
+    <script>
+      function registerTerritory() {
+        var territory = document.getElementById("territorio").value;
+        var countElement = document.getElementById(territory + "-count");
+        var count = parseInt(countElement.innerHTML);
+        count++;
+        countElement.innerHTML = count;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Registro de Territórios</h1>
+    <div class="tabs">
+        <button class="tab-btn" onclick="openTab(event, 'territory-info')">Numero do Território</button>
+        <button class="tab-btn" onclick="openTab(event, 'assignment-info')">Irmão Desiginado</button>
+        <button class="tab-btn" onclick="openTab(event, 'assignment-date')">Data da Desiginação</button>
+        <button class="tab-btn" onclick="openTab(event, 'completion-info')">Data da Conclusão</button>
+      </div>
+
+      <div id="territory-info" class="tab-content">
+        <form onsubmit="registerTerritory(); return false;">
+          <label for="territorio">Selecione um território:</label>
+          <select id="territorio" name="territorio">
+            <option value="1">Vila Santa Catarina - Território 1</option>
+            <option value="2">Vila Santa Catarina - Território 2</option>
+            <option value="3">Vila Santa Catarina - Território 3</option>
+            <option value="4">Vila Santa Catarina - Território 4</option>
+            <option value="5">Vila Santa Catarina - Território 5</option>
+            <option value="6">Vila Santa Catarina - Território 6</option>
+            <option value="7">Vila Santa Catarina - Território 7</option>
+            <option value="8">Vila Santa Catarina - Território 8</option>
+            <option value="9">Vila Santa Catarina - Território 9</option>
+            <option value="10">Vila Santa Catarina - Território 10</option>
+            <option value="11">Vila Santa Catarina - Território 11</option>
+            <option value="12">Vila Santa Catarina - Território 12</option>
+            <option value="13">Vila Santa Catarina - Território 13</option>
+            <option value="14">Vila Santa Catarina - Território 14</option>
+            <option value="15">Vila Santa Catarina - Território 15</option>
+            <option value="16">Vila Santa Catarina - Território 16</option>
+            <option value="17">Vila Santa Catarina - Território 17</option>
+            <!-- outras opções de territórios da Vila Santa Catarina -->
+            <option value="18">Vila Mascote - Território 18</option>
+            <option value="19">Vila Mascote - Território 19</option>
+            <option value="20">Vila Mascote - Território 20</option>
+            <!-- outras opções de territórios da Vila Mascote -->
+            <option value="21">Cidade Leonor - Território 21</option>
+            <option value="22">Cidade Leonor - Território 22</option>
+            <option value="23">Cidade Leonor - Território 23</option>
+            <option value="24">Cidade Leonor - Território 24</option>
+            <option value="25">Cidade Leonor - Território 25</option>
+            <option value="26">Cidade Leonor - Território 26</option>
+            <option value="27">Cidade Leonor - Território 27</option>
+            <option value="28">Cidade Leonor - Território 28</option>
+            <!-- outras opções de territórios da Cidade Leonor -->
+          </select>
+          <input type="submit" value="Registrar território">
+        </form>
+      </div>
+    
+      <div id="territory-info" class="tab-content">
+        <form>
+        <label for="territory-number">Numero do Território:</label>
+        <input type="text" id="territory-number" name="territory-number">
+        </form>
+      </div>
+      
+      <div id="assignment-info" class="tab-content">
+        <form>
+        <label for="assigned-to">Desiginado para:</label>
+        <input type="text" id="assigned-to" name="assigned-to">
+        </form>
+      </div>
+      
+      <div id="assignment-date" class="tab-content">
+        <form>
+        <label for="assignment-date">Data da Desiginação:</label>
+        <input type="date" id="assignment-date" name="assignment-date">
+        </form>
+      </div>
+      
+      <div id="completion-info" class="tab-content">
+        <form>
+        <label for="completion-date">Data da conclusão:</label>
+        <input type="date" id="completion-date" name="completion-date">
+        </form>
+      </div>
+      
+      <script>
+        function openTab(event, tabName) {
+          let i, tabContent, tabBtn;
+          tabContent = document.getElementsByClassName("tab-content");
+          for (i = 0; i < tabContent.length; i++) {
+            tabContent[i].style.display = "none";
+          }
+          tabBtn = document.getElementsByClassName("tab-btn");
+          for (i = 0; i < tabBtn.length; i++) {
+            tabBtn[i].className = tabBtn[i].className.replace(" active", "");
+          }
+          document.getElementById(tabName).style.display = "block";
+          event.currentTarget.className += " active";
+        }
+      </script>
+      
